@@ -1,4 +1,6 @@
+import React from "react";
 import type { Preview } from "@storybook/react";
+import { GlobalStyles } from '../src/theme';
 
 const preview: Preview = {
   parameters: {
@@ -11,5 +13,15 @@ const preview: Preview = {
     },
   },
 };
+
+export const decorators = [
+	(Story) => (
+		<React.Fragment>
+		<GlobalStyles />
+		<Story />
+		</React.Fragment>
+	),
+];
+
 
 export default preview;

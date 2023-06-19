@@ -9,14 +9,14 @@ export const StyledSlantedContainer = styled.div(({ color, rotation }: StyledPro
 	background: color,
 	padding: '1.5rem',
 	transform: rotation === 'left' ?
-		"skewX(-1deg) skewY(.75deg)" :
-		"skewX(1deg) skewY(-.75deg)"
+		"skewX(-2deg) skewY(1.75deg)" :
+		"skewX(2deg) skewY(-1.75deg)"
 	,
 
 	'> :first-of-type': {
 		transform: rotation === 'left' ?
-		"skewX(1deg) skewY(-.75deg)" :
-		"skewX(-1deg) skewY(.75deg)"
+		"skewX(2deg) skewY(-1.75deg)" :
+		"skewX(-2deg) skewY(1.75deg)"
 		,
 	}
 }));

@@ -1,15 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// Component imports
+import { SlantedContainer } from 'ui-components';
+
+// Theme imports
+import { colors } from 'ui-components';
+import { fonts } from 'ui-components';
+
+const themeMode: 'light' | 'dark' = 'light';
 ---
 
 <Layout title="Welcome to Astro.">
-	
+	<SlantedContainer color={colors[themeMode].primary.base}>
+		<div class="hero-block">
+			<div class="hero-block_text">
+				<h1>Hi! I'm Christian, welcome to my portfolio such</h1>
+				<p>I am fullstack software developer</p>
+			</div>
+			<div>
+				<SlantedContainer rotation="left" color={colors[themeMode].primary.lighter}>
+					<div class="hero-block_extra">
+
+					</div>
+				</SlantedContainer>
+			</div>
+		</div>
+	</SlantedContainer>
+
+	<div class="standard-block">
+
+	</div>
+
+	<SlantedContainer rotation="left" color={colors[themeMode].primary.base}>
+		
+	</SlantedContainer>
 </Layout>
 
 <style>
-	*, html, body {
-		box-sizing: border-box;
-		padding: 0;
-		margin: 0;
+	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+	.hero-block {
+		display: flex;
+		justify-content: space-evenly;
+		width: 100%;
+		min-height: 70vh;
+		margin-top: 8vh;
+		padding: 2rem 1rem;
+	}
+
+	.hero-block_text {
+		
+	}
+	.hero-block_extra {
+		width: 30vw;
+		height: 30vw;
+		z-index: 1;
 	}
 </style>

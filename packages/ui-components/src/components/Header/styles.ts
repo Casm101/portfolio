@@ -9,11 +9,13 @@ export const StyledHeader = styled.header({
 	display: 'flex',
 	justifyContent: 'space-between',
 	alignItems: 'center',
+	position: 'fixed',
 
-	height: '10vh',
+	height: '8vh',
 	width: '100%',
 
 	padding: '.5rem 2rem',
+	marginBottom: '8vh',
 
 	backgroundColor: primary,
 	color: fontColor,
@@ -25,7 +27,8 @@ export const StyledHeader = styled.header({
 		height: '70%'
 	},
 
-	boxSizing: 'border-box'
+	boxSizing: 'border-box',
+	zIndex: 1000
 });
 
 export const LinkContainer = styled.div({
