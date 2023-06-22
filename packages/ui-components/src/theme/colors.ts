@@ -1,5 +1,6 @@
 export const colors = {
-	light:{
+	light: {
+		background: '#fff',
 		primary: {
 			base: '#ccfbf1',
 			lighter: '#f0fdfa',
@@ -14,9 +15,14 @@ export const colors = {
 			primary: '#111827',
 			secondary: '#374151',
 			terciary: '#6b7280',
+		},
+		link: {
+			base: '#374151',
+			hover: '#d946ef'
 		}
 	},
 	dark: {
+		background: '#0e0e0f',
 		primary: {
 			base: '#18181a',
 			lighter: '#27272a',
@@ -31,6 +37,10 @@ export const colors = {
 			primary: '#f4f4f5',
 			secondary: '#d4d4d8',
 			terciary: '#a1a1aa',
+		},
+		link: {
+			base: '#fff',
+			hover: '#d946ef'
 		}
 	}
 }
