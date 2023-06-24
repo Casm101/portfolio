@@ -1,16 +1,20 @@
 // Component imports
 import { SlantedContainer } from '../Slanted Container/index.tsx';
+import { Link } from '../Link/index.tsx';
 
 // Type imports
 import { ILink } from '../../types/LinkTypes.ts';
 
 interface FooterProps {
-	logo: string;
   links: ILink[];
 }
 
-export const Footer = ({ logo, links }: FooterProps) => (
+export const Footer = ({ links }: FooterProps) => (
 	<SlantedContainer>
-		hello
+		<div>
+			{links.map((link, idx) => (
+				<Link href={link.href} text={link.text} key={idx} />
+			))}
+		</div>
 	</SlantedContainer>
 );

@@ -15,7 +15,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-		logo: 'https://mi.corzzofit.com/images/logo.png',
 		links: [
 			{
 				text: 'Home',
