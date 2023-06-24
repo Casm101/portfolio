@@ -2,23 +2,34 @@
 import Layout from '../layouts/Layout.astro';
 
 // Component imports
-import { SlantedContainer } from 'ui-components';
+import { InfiniteScroller, SlantedContainer, Testimonial } from 'ui-components';
 
 // Theme imports
 import { colors } from 'ui-components';
-import { fonts } from 'ui-components';
 
 const themeMode: 'light' | 'dark' = 'light';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Christian Smith Mantas" background={themeMode}>
+
+	<!-- Hero block - Introduction and image -->
 	<SlantedContainer color={colors[themeMode].primary.base}>
 		<div class="hero-block">
-			<div class="hero-block_text">
-				<h1>Hi! I'm Christian, welcome to my portfolio such</h1>
-				<p>I am fullstack software developer</p>
+			<div class="hero-block_child">
+				<p
+					class="hero-block_title"
+					style={{color: colors[themeMode].fontColor.primary}}
+				>
+					Hi! I'm Christian, Welcome to my Portfolio
+				</p>
+				<p
+					class="hero-block_description"
+					style={{color: colors[themeMode].fontColor.secondary}}
+				>
+					A Fullstack developer, dedicated to designing and developing user-friendly web applications. Explore my contributions!
+				</p>
 			</div>
-			<div>
+			<div class="hero-block_child">
 				<SlantedContainer rotation="left" color={colors[themeMode].primary.lighter}>
 					<div class="hero-block_extra">
 
@@ -28,33 +39,301 @@ const themeMode: 'light' | 'dark' = 'light';
 		</div>
 	</SlantedContainer>
 
+	<!-- Work ethics block - What I stand for -->
 	<div class="standard-block">
-
+		<div class="ethics-block">
+			<div class="ethics-bullet">
+				<p>User-centric design</p>
+				<p>Prioritizing user experience in every project, ensuring interfaces are intuitive and easy to navigate.</p>
+			</div>
+			<div class="ethics-bullet">
+				<p>Performance first</p>
+				<p>Employing techniques to optimize code and deliver high-performance applications.</p>
+			</div>
+			<div class="ethics-bullet">
+				<p>Modern technologies</p>
+				<p>Keeping up with the latest technology trends and continuously learning to offer the most up-to-date solutions.</p>
+			</div>
+			<div class="ethics-bullet">
+				<p>Problem solving</p>
+				<p>Passionate about developing innovative solutions to address personal and client-specific challenges.</p>
+			</div>
+		</div>
 	</div>
 
-	<SlantedContainer rotation="left" color={colors[themeMode].primary.base}>
-		
+	<!-- Tech block - My tools and tech stack -->
+	<SlantedContainer rotation="left" color={colors[themeMode].secondary.base}>
+		<div class="standard-block">
+			<div class="tech-block">
+				<p
+					class="tech-block_title"
+					style={{color: colors[themeMode].fontColor.primary}}
+				>
+					My daily drive Tech tools
+				</p>
+				<p
+					class="tech-block_description"
+					style={{color: colors[themeMode].fontColor.secondary}}
+				>
+					As a full-stack developer, I work with a variety of technologies daily to deliver comprehensive solutions to complex problems. From developing interactive user interfaces, managing backend logic, to handling data. These technologies equip me to address every layer of development.
+				</p>
+				<SlantedContainer color={colors[themeMode].secondary.lighter}>
+					<div class="tech-block_stack">
+						<InfiniteScroller 
+							tags={['React JS', 'Astro', 'Svelte', 'TypeScript', 'JavaScript', 'HTML', 'CSS', 'Styled Components', 'Emotion', 'Tailwind', 'PHP', 'SASS', 'Node JS', 'Express', 'Fastify', 'React Native', 'Prisma', 'TypeBox', 'Git', 'SCSS']}
+							rows={5},
+							speed={40000}
+						/>
+					</div>
+				</SlantedContainer>
+			</div>
+		</div>
 	</SlantedContainer>
+
+	<!--  -->
+	<div class="standard-block" style="flex-direction: column; gap: 10rem; padding: 6rem 0;">
+		<div class="project-section">
+			<div class="project-divs">
+				<p class="project-title">CorzzoFit</p>
+				<p class="project-description">Online fitness and mental health service and app inspired by Corina Randazzo.</p>
+			</div>
+			<div class="project-section">
+				<SlantedContainer>
+					<div class="project-viewer" />
+				</SlantedContainer>
+			</div>
+		</div>
+		<div class="project-section">
+			<div class="project-section">
+				<SlantedContainer>
+					<div class="project-viewer" />
+				</SlantedContainer>
+			</div>
+			<div class="project-divs">
+				<p class="project-title">Safeguru</p>
+				<p class="project-description">International eCommerce company, experts in personal protective equipment and industrial safety by A-Safe.</p>
+			</div>
+		</div>
+		<div class="project-section">
+			<div class="project-divs">
+				<p class="project-title">Asier Valera Psicología</p>
+				<p class="project-description">Custom site for a general psicology practitioner in Málaga, Spain</p>
+			</div>
+			<div class="project-section">
+				<SlantedContainer>
+					<div class="project-viewer" />
+				</SlantedContainer>
+			</div>
+		</div>
+	</div>
+
+	<!-- Testimonials block - Clients and co-worker's tesimonials -->
+	<SlantedContainer rotation="left" color={colors[themeMode].secondary.base}>
+		<div class="standard-block" style="flex-direction: column; gap: 2rem; padding: 2rem 0;">
+			<p class="testimonial-title">Clients and Colleagues</p>
+			<div class="testimonial-block">
+				<Testimonial
+					image={{
+						src: 'https://pbs.twimg.com/profile_images/1090714620275245056/HS9xcEDk_200x200.jpg',
+						alt: 'Christian'
+					}},
+					name='Christian Smith Mantas',
+					userName='@casm101',
+					testimonial='Working with Christian is always a blast - his knack for problem-solving and coding skills kept our team inspired. Plus, his love for open-source is seriously contagious. Miss those days!',
+					theme='light'
+				/>
+
+				<Testimonial
+					image={{
+						src: 'https://pbs.twimg.com/profile_images/1090714620275245056/HS9xcEDk_200x200.jpg',
+						alt: 'Christian'
+					}},
+					name='Christian Smith Mantas',
+					userName='@casm101',
+					testimonial="It's like jamming with your favorite band. He brings this great mix of expertise, creativity, and fun to the table.",
+					theme='light'
+				/>
+
+				<Testimonial
+					image={{
+						src: 'https://pbs.twimg.com/profile_images/1090714620275245056/HS9xcEDk_200x200.jpg',
+						alt: 'Christian'
+					}},
+					name='Christian Smith Mantas',
+					userName='@casm101',
+					testimonial="I used to look forward to our team meetings because of Christian, his easy-going personality, was just infectious!",
+					theme='light'
+				/>
+
+				<Testimonial
+					image={{
+						src: 'https://pbs.twimg.com/profile_images/1090714620275245056/HS9xcEDk_200x200.jpg',
+						alt: 'Christian'
+					}},
+					name='Christian Smith Mantas',
+					userName='@casm101',
+					testimonial="Christian's not just a brilliant coder, but a team player who knows how to make work fun. His enthusiasm for open source is as infectious as his laughter. Those were good times!",
+					theme='light'
+				/>
+			</div>	
+		</div>
+	</SlantedContainer>
+
+	<!-- Contact block -->
+	<div class="standard-block">
+		<div class="contact-block">
+			<p>Like what you see here in my portfolio?</p>
+			<p>Get in <a href="/contact">touch</a>!</p>
+		</div>
+	</div>
 </Layout>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 	.hero-block {
 		display: flex;
 		justify-content: space-evenly;
-		width: 100%;
+		gap: 3rem;
+
+		width: 1440px;
 		min-height: 70vh;
-		margin-top: 8vh;
 		padding: 2rem 1rem;
+
+		margin-top: 8vh;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
-	.hero-block_text {
-		
+	.hero-block_child {
+		width: 50%;
 	}
+
+	.hero-block_title {
+		font-family: 'Shrikhand';
+		font-size: 4rem;
+		width: 320px;
+		line-height: 1.25;
+	}
+
+	.hero-block_description {
+		font-size: 1.4rem;
+		color: colors[themeMode].fontColor.secondary;
+		line-height: 2;
+		max-width: 500px;
+	}
+
 	.hero-block_extra {
 		width: 30vw;
 		height: 30vw;
-		z-index: 1;
+	}
+
+
+	.ethics-block {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		width: 1200px;
+	}
+
+	.ethics-bullet {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		align-items: flex-start;
+		flex-basis: 1;
+
+		max-width: 20%;
+
+		:nth-child(1) {
+			font-size: 1.4rem;
+		}
+		:nth-child(2) {
+			font-size: 1.2rem;
+		}
+	}
+
+
+	.tech-block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+		text-align: center;
+
+		max-width: 768px;
+		min-width: 320px;
+		padding: 2rem 0;
+	}
+
+	.tech-block_title {
+		font-size: 2rem;
+		color: colors[themeMode].fontColor.primary;
+	}
+
+	.tech-block_description {
+		font-size: 1.4rem;
+		color: colors[themeMode].fontColor.secondary;
+		line-height: 2;
+	}
+
+	.tech-block_stack {
+		max-width: 768px;
+		min-width: 320px;
+	}
+
+
+	.project-section {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		width: 1440px;
+
+		div:first-child {
+			width: 50%;
+		}
+	}
+
+	.project-divs {
+		width: 50%;
+		text-align: center;
+	}
+
+	.project-title {
+		font-size: 2rem;		
+	}
+
+	.project-description {
+		font-size: 1.4rem;
+		line-height: 2;
+	}
+
+	.project-viewer {
+		height: 300px;
+		width: 450px;
+	}
+
+
+	.testimonial-title {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+	}
+
+	.testimonial-block {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+		gap: 3rem;
+
+		width: 1200px;
+	}
+
+	.contact-block {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+
+		font-size: 1.4rem;
 	}
 </style>
