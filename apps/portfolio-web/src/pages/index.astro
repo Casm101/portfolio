@@ -8,9 +8,12 @@ import { InfiniteScroller, SlantedContainer, Testimonial } from 'ui-components';
 import { colors } from 'ui-components';
 
 const themeMode: 'light' | 'dark' = 'light';
+
+const title = 'Christian Smith Mantas | Experienced Full Stack Web Developer & Software Engineer';
+const metaDescription = 'Portfolio Christian Smith Mantas, a professional full stack developer specializing in responsive web design, Typescript, and other frameworkd. Discover projects, skills, and get in touch for collaborations.';
 ---
 
-<Layout title="Christian Smith Mantas" background={themeMode}>
+<Layout title={title} description={metaDescription} background={themeMode}>
 
 	<!-- Hero block - Introduction and image -->
 	<SlantedContainer color={colors[themeMode].primary.base}>
@@ -111,7 +114,7 @@ const themeMode: 'light' | 'dark' = 'light';
 			</div>
 			<div class="project-divs">
 				<p class="project-title">Safeguru</p>
-				<p class="project-description">International eCommerce company, experts in personal protective equipment and industrial safety by A-Safe.</p>
+				<p class="project-description">Safeguru by A-Safe provides a platform to buy industrial and workplace safety products, along with resources on risk prevention and exclusive subscriber benefits.</p>
 			</div>
 		</div>
 		<div class="project-section">
