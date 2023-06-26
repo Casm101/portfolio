@@ -13,11 +13,12 @@ interface TestimonialProps {
 	userName: string;
 	testimonial: string;
 	theme: 'light' | 'dark';
+	rotation?: 'left' | 'right';
 }
 
-export const Testimonial = ({ image, name, userName, testimonial, theme = 'light' }: TestimonialProps) => (
+export const Testimonial = ({ image, name, userName, testimonial, theme = 'light', rotation = 'left' }: TestimonialProps) => (
 	
-		<SlantedContainer color={colors[theme].background} rotation='left' shadow={true}>
+		<SlantedContainer color={colors[theme].background} rotation={rotation} shadow={true}>
 			<StyledTestimonial>
 				<div className='user-details'>
 					{ image ?
