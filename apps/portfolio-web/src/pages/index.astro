@@ -4,16 +4,19 @@ import Layout from '../layouts/Layout.astro';
 // Component imports
 import { InfiniteScroller, SlantedContainer, Testimonial } from 'ui-components';
 
+// Style imports
+import '../styles/index.css';
+
 // Theme imports
+const themeMode: 'light' | 'dark' = 'light';
 import { colors } from 'ui-components';
 
-const themeMode: 'light' | 'dark' = 'light';
-
-const title = 'Christian Smith Mantas | Experienced Full Stack Web Developer & Software Engineer';
+// Site meta data
+const metaTitle = 'Christian Smith Mantas | Experienced Full Stack Web Developer & Software Engineer';
 const metaDescription = 'Portfolio Christian Smith Mantas, a professional full stack developer specializing in responsive web design, Typescript, and other frameworkd. Discover projects, skills, and get in touch for collaborations.';
 ---
 
-<Layout title={title} description={metaDescription} background={themeMode}>
+<Layout title={metaTitle} description={metaDescription} background={themeMode}>
 
 	<!-- Hero block - Introduction and image -->
 	<SlantedContainer color={colors[themeMode].primary.base}>
@@ -46,19 +49,19 @@ const metaDescription = 'Portfolio Christian Smith Mantas, a professional full s
 	<div class="standard-block">
 		<div class="ethics-block">
 			<div class="ethics-bullet">
-				<p>User-centric design</p>
+				<p> <span class="ethics-tab"></span>	User-centric design</p>
 				<p>Prioritizing user experience in every project, ensuring interfaces are intuitive and easy to navigate.</p>
 			</div>
 			<div class="ethics-bullet">
-				<p>Performance first</p>
+				<p> <span class="ethics-tab"></span> Performance first</p>
 				<p>Employing techniques to optimize code and deliver high-performance applications.</p>
 			</div>
 			<div class="ethics-bullet">
-				<p>Modern technologies</p>
+				<p> <span class="ethics-tab"></span> Modern technologies</p>
 				<p>Keeping up with the latest technology trends and continuously learning to offer the most up-to-date solutions.</p>
 			</div>
 			<div class="ethics-bullet">
-				<p>Problem solving</p>
+				<p> <span class="ethics-tab"></span> Problem solving</p>
 				<p>Passionate about developing innovative solutions to address personal and client-specific challenges.</p>
 			</div>
 		</div>
@@ -93,12 +96,12 @@ const metaDescription = 'Portfolio Christian Smith Mantas, a professional full s
 		</div>
 	</SlantedContainer>
 
-	<!--  -->
+	<!-- Projects block - Projects I have personally worked on -->
 	<div class="standard-block" style="flex-direction: column; gap: 10rem; padding: 6rem 0;">
 		<div class="project-section">
 			<div class="project-divs">
 				<p class="project-title">CorzzoFit</p>
-				<p class="project-description">Online fitness and mental health service and app inspired by Corina Randazzo.</p>
+				<p class="project-description">A wellness platform offering 30-min workouts, meditation, and mindfulness sessions for both physical and mental wellness.</p>
 			</div>
 			<div class="project-section">
 				<SlantedContainer>
@@ -155,6 +158,7 @@ const metaDescription = 'Portfolio Christian Smith Mantas, a professional full s
 					userName='@casm101',
 					testimonial="It's like jamming with your favorite band. He brings this great mix of expertise, creativity, and fun to the table.",
 					theme='light'
+					rotation='right'
 				/>
 
 				<Testimonial
@@ -166,6 +170,7 @@ const metaDescription = 'Portfolio Christian Smith Mantas, a professional full s
 					userName='@casm101',
 					testimonial="I used to look forward to our team meetings because of Christian, his easy-going personality, was just infectious!",
 					theme='light'
+					rotation='right'
 				/>
 
 				<Testimonial
@@ -190,153 +195,3 @@ const metaDescription = 'Portfolio Christian Smith Mantas, a professional full s
 		</div>
 	</div>
 </Layout>
-
-<style>
-	.hero-block {
-		display: flex;
-		justify-content: space-evenly;
-		gap: 3rem;
-
-		width: 1440px;
-		min-height: 70vh;
-		padding: 2rem 1rem;
-
-		margin-top: 8vh;
-		margin-left: auto;
-		margin-right: auto;
-	}
-
-	.hero-block_child {
-		width: 50%;
-	}
-
-	.hero-block_title {
-		font-family: 'Shrikhand';
-		font-size: 4rem;
-		width: 320px;
-		line-height: 1.25;
-	}
-
-	.hero-block_description {
-		font-size: 1.4rem;
-		color: colors[themeMode].fontColor.secondary;
-		line-height: 2;
-		max-width: 500px;
-	}
-
-	.hero-block_extra {
-		width: 30vw;
-		height: 30vw;
-	}
-
-
-	.ethics-block {
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
-		width: 1200px;
-	}
-
-	.ethics-bullet {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-		align-items: flex-start;
-		flex-basis: 1;
-
-		max-width: 20%;
-
-		:nth-child(1) {
-			font-size: 1.4rem;
-		}
-		:nth-child(2) {
-			font-size: 1.2rem;
-		}
-	}
-
-
-	.tech-block {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 2rem;
-		text-align: center;
-
-		max-width: 768px;
-		min-width: 320px;
-		padding: 2rem 0;
-	}
-
-	.tech-block_title {
-		font-size: 2rem;
-		color: colors[themeMode].fontColor.primary;
-	}
-
-	.tech-block_description {
-		font-size: 1.4rem;
-		color: colors[themeMode].fontColor.secondary;
-		line-height: 2;
-	}
-
-	.tech-block_stack {
-		max-width: 768px;
-		min-width: 320px;
-	}
-
-
-	.project-section {
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
-		width: 1440px;
-
-		div:first-child {
-			width: 50%;
-		}
-	}
-
-	.project-divs {
-		width: 50%;
-		text-align: center;
-	}
-
-	.project-title {
-		font-size: 2rem;		
-	}
-
-	.project-description {
-		font-size: 1.4rem;
-		line-height: 2;
-	}
-
-	.project-viewer {
-		height: 300px;
-		width: 450px;
-	}
-
-
-	.testimonial-title {
-		font-size: 2rem;
-		margin-bottom: 2rem;
-	}
-
-	.testimonial-block {
-		display: flex;
-		align-items: center;
-		justify-content: space-evenly;
-		flex-wrap: wrap;
-		gap: 3rem;
-
-		width: 1200px;
-	}
-
-	.contact-block {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 1rem;
-
-		font-size: 1.4rem;
-	}
-</style>
