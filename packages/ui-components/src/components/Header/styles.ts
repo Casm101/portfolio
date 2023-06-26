@@ -20,7 +20,6 @@ export const StyledHeader = styled.header({
 	backgroundColor: primary,
 	color: fontColor,
 
-	borderBottom: '1px solid #e5e7eb',
 	boxShadow: 'var(--tw - ring - offset - shadow, 0 0 #0000), var(--tw - ring - shadow, 0 0 #0000), var(--tw - shadow)',
 
 	img: {
