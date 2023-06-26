@@ -1,3 +1,4 @@
+/* Hero Block styles */
 .hero-block {
 	display: flex;
 	justify-content: space-evenly;
@@ -13,20 +14,10 @@
 	margin-right: auto;
 }
 
-.hero-block_child {
-	width: 550px;
-}
-
-@media screen and (max-width: 720px) {
-	.hero-block_child {
-		width: 80%;
-	}
-}
-
 .hero-block_title {
 	font-family: 'Shrikhand';
 	font-size: 4rem;
-	width: 320px;
+	max-width: 320px;
 	line-height: 1.25;
 }
 
@@ -36,17 +27,22 @@
 	max-width: 500px;
 }
 
-.hero-block_extra {
-	width: 100%;
-	height: 100%;
+.hero-block_child {
+	width: 550px;
 }
 
+.hero-block_extra {
+	width: 550px;
+	height: 550px;
+}
 
+/* Ethics block styling */
 .ethics-block {
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
-	width: 1200px;
+	flex-wrap: wrap;
+	width: 1440px;
 }
 
 .ethics-bullet {
@@ -56,7 +52,7 @@
 	align-items: flex-start;
 	flex-basis: 1;
 
-	max-width: 20%;
+	width: 20%;
 
 	:nth-child(1) {
 		font-size: 1.4rem;
@@ -67,7 +63,7 @@
 	}
 }
 
-
+/* Tech Block styles */
 .tech-block {
 	display: flex;
 	flex-direction: column;
@@ -75,9 +71,12 @@
 	gap: 2rem;
 	text-align: center;
 
-	max-width: 768px;
-	min-width: 320px;
+	width: 768px;
 	padding: 2rem 0;
+}
+
+.tech-block_stack {
+	max-width: 768px;
 }
 
 .tech-block_title {
@@ -89,26 +88,27 @@
 	line-height: 2;
 }
 
-.tech-block_stack {
-	max-width: 768px;
-	min-width: 320px;
-}
-
-
+/* Project Block styles */
 .project-section {
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
 	width: 1440px;
+}
 
-	div:first-child {
-		width: 50%;
-	}
+.project-section.reverse {
+	flex-direction: row-reverse;
 }
 
 .project-divs {
-	width: 50%;
+	width: 40%;
 	text-align: center;
+}
+
+.project-viewer {
+	height: 300px;
+	width: 450px;
 }
 
 .project-title {
@@ -120,17 +120,7 @@
 	line-height: 2;
 }
 
-.project-viewer {
-	height: 300px;
-	width: 450px;
-}
-
-
-.testimonial-title {
-	font-size: 2rem;
-	margin-bottom: 2rem;
-}
-
+/* Testimonial Block styles */
 .testimonial-block {
 	display: flex;
 	align-items: center;
@@ -141,6 +131,11 @@
 	width: 1200px;
 }
 
+.testimonial-title {
+	font-size: 2rem;
+	margin-bottom: 2rem;
+}
+
 .contact-block {
 	display: flex;
 	flex-direction: column;
@@ -149,4 +144,120 @@
 	gap: 1rem;
 
 	font-size: 1.4rem;
+	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+
+	/* Hero Block styles - tablet */
+	.hero-block {
+		width: 100%;
+	}
+
+	.hero-block_child {
+		width: 80%;
+	}
+
+	.hero-block_extra {
+		width: 700px;
+		height: 700px;
+	}
+
+	/* Ethics Block styles - tablet */
+	.ethics-block {
+		width: 700px;
+	}
+
+	.ethics-bullet {
+		width: 300px;
+	}
+
+	/* Tech Block styles - tablet */
+	.tech-block {
+		width: 700px;
+	}
+
+	.tech-block_stack {
+		max-width: 600px;
+	}
+
+	/* Project Block styles - tablet */
+	.project-section {
+		width: 700px;
+		gap: 2rem;
+	}
+
+	.project-section.reverse {
+		flex-direction: row;
+	}
+
+	.project-divs {
+		width: 100%;
+	}
+
+	.project-viewer {
+		height: 300px;
+		width: 450px;
+	}
+
+	/* Testimonial Block styles - tablet */
+	.testimonial-block {
+		width: 700px;
+	}
+}
+
+
+@media screen and (max-width: 375px) {
+
+	/* Hero Block styles - mobile */
+	.hero-block {
+		width: 100%;
+	}
+
+	.hero-block_child {
+		width: 90%;
+	}
+
+	.hero-block_extra {
+		width: 300px;
+		height: 300px;
+	}
+
+	/* Ethics Block styles - mobile */
+	.ethics-block {
+		width: 100%;
+	}
+
+	.ethics-bullet {
+		width: 300px;
+	}
+
+	/* Tech Block styles - mobile */
+	.tech-block {
+		width: 300px;
+	}
+
+	.tech-block_stack {
+		max-width: 225px;
+	}
+
+	/* Project Block styles - mobile */
+	.project-section {
+		width: 300px;
+		gap: 2rem;
+	}
+
+	.project-divs {
+		width: 100%;
+	}
+
+	.project-viewer {
+		height: 200px;
+		width: 300px;
+	}
+
+	/* Testimonial Block styles - tablet */
+	.testimonial-block {
+		width: 300px;
+	}
 }
